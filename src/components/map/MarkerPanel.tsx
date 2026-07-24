@@ -6,7 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip as RechartsTooltip, ResponsiveCont
 import { useTranslation } from '../../hooks/useTranslation';
 
 export const MarkerPanel = () => {
-  const { selectedUniversity, setSelectedUniversity, language } = useAppStore();
+  const { selectedUniversity, setSelectedUniversity } = useAppStore();
   const { t } = useTranslation();
 
   if (!selectedUniversity) return null;

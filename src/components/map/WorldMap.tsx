@@ -11,7 +11,7 @@ export const WorldMap = () => {
   const { data: universities = [] } = useGoogleSheetData();
   const { hoveredUniversity, setHoveredUniversity, selectedUniversity, setSelectedUniversity, searchTerm } = useAppStore();
   const [position, setPosition] = useState({ coordinates: [20, 20] as [number, number], zoom: 1 });
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
 
   const filteredUniversities = useMemo(() => {
     if (!searchTerm) return universities;
@@ -176,7 +176,6 @@ export const WorldMap = () => {
               onMouseEnter={() => setHoveredUniversity(uni)}
               onMouseLeave={() => setHoveredUniversity(null)}
               onClick={() => setSelectedUniversity(uni)}
-              style={{ zIndex: hoveredUniversity?.sNo === uni.sNo ? 100 : 1 }}
             >
               <circle r={15} fill="rgba(0,0,0,0)" style={{ cursor: 'pointer', pointerEvents: 'all' }} />
               <g style={{ pointerEvents: 'none' }}>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Globe, Users, Plane, GraduationCap, ArrowRight, BookOpen, MapPin, Award, Building2, TrendingUp, FlaskConical, Sun, Briefcase } from 'lucide-react';
+import { Globe, Users, Plane, GraduationCap, ArrowRight, BookOpen, MapPin, TrendingUp, FlaskConical } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 
 const stats = [

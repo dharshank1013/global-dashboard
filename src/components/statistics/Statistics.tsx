@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
-import { Plane, Users, Map as MapIcon, TrendingUp, GraduationCap, Globe2, Award } from 'lucide-react';
+import { Plane, Users, Map as MapIcon, TrendingUp } from 'lucide-react';
 import { useGoogleSheetData } from '../../hooks/useGoogleSheetData';
-import { useAppStore } from '../../store/useAppStore';
+
 import { useTranslation } from '../../hooks/useTranslation';
 
 export const Statistics = () => {
   const { data: universities = [] } = useGoogleSheetData();
-  const { isDarkMode } = useAppStore();
+  const isDarkMode = true;
   const { t } = useTranslation();
 
   const metrics = useMemo(() => {

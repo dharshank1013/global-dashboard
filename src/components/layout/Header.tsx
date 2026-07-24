@@ -1,4 +1,4 @@
-import { Search, MapPin, Globe2, Users, GraduationCap, Building2 } from 'lucide-react';
+import { Search, MapPin, Building2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { useAppStore } from '../../store/useAppStore';
