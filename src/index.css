@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-brand-blue: #0B132B;
+  --color-brand-light-blue: #1A2645;
+  --color-brand-cyan: #9C1C22;
+  --color-brand-gold: #D4AF37;
+  --color-exchange-outbound: #3b82f6;
+  --color-exchange-inbound: #10b981;
+  --color-exchange-faculty: #f97316;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-color: #f8fafc;
+  --bg-image: radial-gradient(at 0% 0%, rgba(156, 28, 34, 0.08) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.1) 0px, transparent 50%), radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.08) 0px, transparent 50%);
+  --text-color: #334155;
+  --glass-panel-bg: rgba(255, 255, 255, 0.7);
+  --glass-panel-border: rgba(0, 0, 0, 0.05);
+  --glass-card-bg: rgba(255, 255, 255, 0.8);
+  --glass-card-hover: rgba(255, 255, 255, 1);
+  --glass-card-border: rgba(0, 0, 0, 0.05);
+  --glass-card-border-hover: rgba(0, 0, 0, 0.1);
+  --glass-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+  --glass-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  --glass-card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --scrollbar-thumb: rgba(0, 0, 0, 0.15);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.25);
+}
+
+.dark {
+  --bg-color: #0B132B;
+  --bg-image: none;
+  --text-color: #cbd5e1;
+  --glass-panel-bg: rgba(15, 23, 42, 0.6);
+  --glass-panel-border: rgba(255, 255, 255, 0.08);
+  --glass-card-bg: rgba(255, 255, 255, 0.05);
+  --glass-card-hover: rgba(255, 255, 255, 0.1);
+  --glass-card-border: rgba(255, 255, 255, 0.05);
+  --glass-card-border-hover: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --glass-card-shadow: none;
+  --glass-card-shadow-hover: none;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.1);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.glass-panel {
+  background-color: var(--glass-panel-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-panel-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 1rem;
+  transition: all 0.4s ease;
+}
+
+.glass-card {
+  background-color: var(--glass-card-bg);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--glass-card-border);
+  box-shadow: var(--glass-card-shadow);
+  border-radius: 0.75rem;
+  transition: all 300ms ease;
+}
+
+.glass-card:hover {
+  background-color: var(--glass-card-hover);
+  border-color: var(--glass-card-border-hover);
+  box-shadow: var(--glass-card-shadow-hover);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+@keyframes flow-blue {
+  from { stroke-dashoffset: 8; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes flow-green {
+  from { stroke-dashoffset: -8; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes flow-orange {
+  from { stroke-dashoffset: 8; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-flow-blue {
+  animation: flow-blue 1s linear infinite;
+}
+.animate-flow-green {
+  animation: flow-green 1s linear infinite;
+}
+.animate-flow-orange {
+  animation: flow-orange 1.5s linear infinite;
+}
+.animate-blob {
+  animation: blob 7s infinite;
+}
